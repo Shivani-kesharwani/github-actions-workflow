@@ -1,0 +1,17 @@
+# this is workflow name
+name: hello kese hai ap
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: hello dosto
+        run: echo "hello kese hai ap"
+
+      - name: say hello to dosto
+        run: echo "hello ${{ github.actor }}"
