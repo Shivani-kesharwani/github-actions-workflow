@@ -1,0 +1,16 @@
+# this is workflow name 
+
+name: hello apka name
+on:
+ push:
+  branches: [main]
+# this is job inside the workflow 
+
+  job:
+    enquiry:
+     runs-on: ubuntu-latest
+
+    -name: hello dosto 
+    -run: echo "hello apka name"
+
+    
