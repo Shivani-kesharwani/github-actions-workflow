@@ -1,0 +1,23 @@
+name: hello apka name
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  enquiry:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: hello dosto
+        run: echo "hello apka name"
+
+  details:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: version of docker and python
+        run: |
+          docker --version
+          python --version
