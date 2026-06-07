@@ -1,0 +1,26 @@
+name: collect employee data
+on:
+  push:
+    branches:
+      - main
+jobs:
+  name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: apki name
+        run: echo "$name"
+  dob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: apki date of birth
+        run: echo "date of birth"
+  age:
+    runs-on: ubuntu-latest
+    steps:
+      - name: apki age
+        run: echo "age"
+  address:
+    runs-on: ubuntu-latest
+    steps:
+      - name: apka address
+        run: echo "address"
