@@ -1,0 +1,34 @@
+name: workflow for ci/cd
+on:
+  workflow_dispatch:
+    inputs: 
+      envirment:
+    description: this is envirment value where workflow runs
+      option:
+        - dev
+        - prod
+        - staging
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        run: echo "code clone from github"
+  build:
+    needs: code
+    runs-on: ubuntu-latest
+    steps:
+      - name: build docker container
+        run: echo "docker container build"
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: test the container
+        run: echo "testing the container"
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploying the app
+        run: echo "docker compose deployed the app"
