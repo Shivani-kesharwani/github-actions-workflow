@@ -1,0 +1,26 @@
+name: workflow for school admission
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: student name
+        run: echo "name"
+
+  age:
+    needs: name
+    runs-on: ubuntu-latest
+    steps:
+      - name: student age
+        run: echo "age"
+
+  dob:
+    needs: age
+    runs-on: ubuntu-latest
+    steps:
+      - name: student date of birth
+        run: echo "date of birth"
