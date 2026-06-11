@@ -1,9 +1,16 @@
 name: workflow for ci/cd
 
 on:
-  push:
-    branches: [main]
-
+  workflow_dispatch: 
+    description: this is envirment value where workflow runs 
+   inputs:
+    envirment:
+      option: 
+       - dev:
+       - prod:
+       - staging:
+        
+        
 jobs:
   code:
     runs-on: ubuntu-latest
