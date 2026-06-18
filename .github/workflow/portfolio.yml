@@ -1,26 +1,33 @@
 name: portfolio for website
+
 on:
   push:
-    branches: [main]
-    permission:
-     pages: write
-     id-token: write
-  jobs:
-    deploy:
-      runs-on: ubuntu-latest
-  steps:
-       # get access to your code for pre-build action
-    - name: checkout code
-      uses: actions/checkout@v4
-      # github pages for run
-    - name: github pages
-      uses: actions/configure-pages@v5
-      # static page artifact 
-    - name: upload static file
-      uses: actions/upload-pages-artifact@v4
-      # deploy the porfolio 
-    - name: deploy to github pages 
-      uses: actions/deploy-pages@v4
-      
+    branches:
+      - main
+
+permissions:
+  pages: write
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload static files
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
       
       
