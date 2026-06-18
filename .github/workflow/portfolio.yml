@@ -1,0 +1,13 @@
+name: portfolio for website
+on:
+  push:
+    branches:
+      - main
+  jobs:
+    deploy:
+      runs-on: ubuntu-latest
+  steps:
+    - name: checkout code
+      uses: actions/checkout@v4
+    - name: github pages
+      uses: actions/configure-pages@v5
